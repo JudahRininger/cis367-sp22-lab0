@@ -4,8 +4,15 @@ const app = express();
 const hostname = "localhost";
 const port = 3000;
 
+app.use(express.static(__dirname + '/public'))
 app.get('/', (req, res)=> {
-    res.send("Hey, it works!");
+    res.send(`<body>
+                <header>
+                <h1>Here is a picture of a certified hacker:</h1>
+                    <img src="/img/Hacker.jpg" alt="Meadowlark Travel Logo"> 
+                </header>
+            </body>`);
+    
 });
 
 app.get('/greet', (req, res)=>{
